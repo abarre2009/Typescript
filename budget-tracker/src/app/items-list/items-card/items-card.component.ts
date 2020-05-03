@@ -1,3 +1,4 @@
+import { BudgetItem } from './../../../shared/models/budget-items.models';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./items-card.component.scss']
 })
 export class ItemsCardComponent implements OnInit {
-  @Input() isIncome: boolean = true;
+  @Input() item: BudgetItem;
 
   constructor() {}
 

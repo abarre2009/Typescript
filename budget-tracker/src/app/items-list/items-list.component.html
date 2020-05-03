@@ -3,28 +3,24 @@
     <div class="income-column">
       <h1>Income</h1>
       <div class="budget-items">
-        <app-items-card
-          [isIncome]="true"
-          style="margin-bottom: 20px"
-        ></app-items-card>
-        <app-items-card
-          [isIncome]="true"
-          style="margin-bottom: 20px"
-        ></app-items-card>
+        <div *ngFor="let Item of budgetItems">
+          <app-items-card
+            *ngIf="Item.amount >= 0"
+            style="display: block; margin-bottom: 20px"
+          ></app-items-card>
+        </div>
       </div>
     </div>
 
     <div class="expense-column">
       <h1>Expenses</h1>
       <div class="budget-items">
-        <app-items-card
-          [isIncome]="false"
-          style="margin-bottom: 20px"
-        ></app-items-card>
-        <app-items-card
-          [isIncome]="false"
-          style="margin-bottom: 20px"
-        ></app-items-card>
+        <div *ngFor="let Item of budgetItems">
+          <app-items-card
+            *ngIf="Item.amount < 0"
+            style="display: block; margin-bottom: 20px"
+          ></app-items-card>
+        </div>
       </div>
     </div>
   </div>

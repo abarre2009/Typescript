@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { BudgetItem } from './../../shared/models/budget-items.models';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-item-form',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-item-form.component.scss']
 })
 export class AddItemFormComponent implements OnInit {
+  @Input() item: BudgetItem = new BudgetItem('', null);
+  @Output() formSubmit: EventEmitter<BudgetItem> = new EventEmitter<
+    BudgetItem
+  >();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  onSubmit(form: NgForm) {
+    this.formSubmit.emit(form.value);
   }
-
 }

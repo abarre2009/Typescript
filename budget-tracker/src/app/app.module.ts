@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,8 +10,14 @@ import { ItemsListComponent } from './items-list/items-list.component';
 import { ItemsCardComponent } from './items-list/items-card/items-card.component';
 
 @NgModule({
-  declarations: [AppComponent, MainPageComponent, AddItemFormComponent, ItemsListComponent, ItemsCardComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    MainPageComponent,
+    AddItemFormComponent,
+    ItemsListComponent,
+    ItemsCardComponent
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
